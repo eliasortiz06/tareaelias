@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/head') %>
+</head>
+<body>
+    <header id="top">
+        <%- include('partials/header') %>
+    </header>
+
+    <main id="home">
+        <h2>Ultimas entradas del blog</h2>
+        <div class="inner">
+            <% pelicula.forEach(pelicula => { %>
+                <div class="pelicula">
+                    <div class="pelicula-imagen">
+                        <a href="/detalle/<%= pelicula.id %>">
+                            <img src="<%= pelicula.image %>" alt="<%= pelicula.title %>">
+                        </a>
+                    </div>
+                    <div class="pelicula-nombre">
+                        <%= pelicula.title %>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    </main>
+
+    <footer>
+        <%- include('partials/footer') %>
+    </footer>
+</body>
+</html>
